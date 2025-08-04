@@ -5,7 +5,20 @@
     </head>
     <body>
         <h1>Restaurant Menu</h1>
-        <ul>id ="menu-list"</ul>
-        
+        <ul id ="menu-list"></ul>
+        <script>
+            fetch('api/items/')
+            .then(response=>response.json())
+            .then(data =>{
+            const list = document.getElementById('menu-list');
+            data.forEach(item =>{
+            const listItem = document.createElement('li');
+            listItem.textContent = item.name + '- rs'+item.price;
+            list.appendChild(listItem);
+            });
+            })
+            .catch(()=>{
+            document.getElementById('menu-list').textContent='failede to load menu .';});
+            </script>
     </body>
 </html>
