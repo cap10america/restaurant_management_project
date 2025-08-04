@@ -3,4 +3,5 @@ from .views import *
 
 urlpatterns = [
     path('items/', ItemView.as_view(), name='item-list'),
+    path('menu/',menu_page,name='menu_page'),
 ]
