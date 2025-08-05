@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Menu(models.Model):
     name = models.CharField(max_length=255)
-    price = models.Model.DecimalField(max_digits=7,decimal_places=2)
+    price = models.DecimalField(max_digits=7,decimal_places=2)
     def __str__(self):
         return self.name
 
