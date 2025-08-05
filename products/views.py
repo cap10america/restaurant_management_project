@@ -37,3 +37,12 @@ class MenuView(APIView):
             serializer.save()
             return Response(serializer.data,status=status.HTTP_201_CREATED)
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+
+class MenuAPIView(APIView):
+    def get(self,request):
+        menu =[
+            
+            {"name":"pizza a","description":"pizza made with a","price" :299 }
+            {"name":"burger" ,"description" :"burgeer with chicken","price":200}
+        ]
+        return Response(menu,status =stauts.HTTP_200_OK+)
