@@ -58,8 +58,21 @@
             .then(data =>{
             const list = document.getElementById('menu-list');
             data.forEach(item =>{
-            const listItem = document.createElement('li');
-            listItem.textContent = item.name + '- rs'+item.price;
+            const li = document.createElement('li');
+            li.innerHTML =`<span style ="font-weigth:500;">${item.name}</span>
+            <span style ="color:#388e3c;font-weigth:bold; float:right;">${item.price}</span>`;
+            li.style.background ='#fff';
+            li.style.marginBottom = '18px';
+            li.style.borderRadius ='7px';
+            li.style.padding ='16px 20px';
+            li.style.boxShadow = '0 1px 6px rgba(60,100,140,0.07)';
+            li.style.display = 'flex';
+            li.style.justifyContent = 'space-between';
+            li.style.alignItems ='center';
+            li.style.fontSize = '1.08rem';
+            li.style.border = '1px solid #dde4ef';
+            li.textContent = item.name + '- rs'+item.price;
+
             list.appendChild(listItem);
             });
             })
