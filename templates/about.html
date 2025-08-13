@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About {{restaurant_name }}</title>
+
+    </head>
+    <body>
+        <div class="nav">
+            <a href ="{% url 'homepage' %">Home</a>
+            <a href = "{% url 'about' %}">About</a> 
+        </div>
+        <div class="container">
+            <h1>About {{restaurant_name}}<h1>
+            <p>
+                WElcome to {{restaurant_name}} ,where flavour meets tradition !
+                we pride ourselves on serving fresh ,locally sourced dishes crafted with love .
+                
+        </div>
+    </body>
+</html>
