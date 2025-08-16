@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-
+from django.conf import settings
 from .models import Item , Restaurant
 from .serializers import ItemSerializer
 
@@ -15,7 +15,8 @@ NOTE: Conside this as a reference and follow this same coding structure or forma
 def homepage(request):
     restaurant = Restaurant.objects.first()
     restaurant_name = restaurant.name if restaurant else "Our Restaurant"
-    return render(request ,'homepage.html' ,{'restaurant_name':restaurant_name})
+    phone_number = getattr(settings,'RESTAURANT_PHONE',"Not availabe")
+    return render(request ,'homepage.html' ,{'restaurant_name':restaurant_name,'phone_number':phone_number})
 class ItemView(APIView):
 
     def get(self, request):
